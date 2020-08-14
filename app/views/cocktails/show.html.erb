@@ -5,6 +5,7 @@
       <h2>Doses:</h2>
         <% @cocktail.doses.each do |dose| %>
           <p><%= dose.description %><%= dose.ingredient.name %></p>
+        <%= link_to "Delete the dose", dose_path(dose), method: :delete %> 
         <% end %>
     <%= simple_form_for [@cocktail, Dose.new] do |s|%>  
       <%= s.input :description %>  
